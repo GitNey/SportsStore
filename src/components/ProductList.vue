@@ -18,14 +18,17 @@
             </h4>
             <div class="card-text bg-white p-1">{{ p.description }}</div>
         </div>
+        <page-controls />
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex' // impport the mapState operation from vuex
+import PageControls from '@/components/PageControls.vue'
+import { /*mapState,*/ mapGetters } from 'vuex' // impport the mapState operation from vuex
 export default {
     computed: {
-        ...mapState(['products']) // single expression declaration of computed 
+        ...mapGetters({ products: 'processedProducts' }),
+        // ...mapState(['products']), // single expression declaration of computed 
         /**
          * Shorthand from
          * computed: {
@@ -34,6 +37,9 @@ export default {
          *  }
          * }
          */
+    },
+    components: {
+        PageControls
     },
     filters: {
         currency(value) {
