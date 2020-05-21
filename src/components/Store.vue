@@ -13,5 +13,20 @@
                 <h4 class="text-white m-2">Products</h4>
             </div>
         </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-9 p-2">
+                <product-list />
+            </div>
+        </div>
     </div>
 </template>
+
+<script>
+import ProductList from '@/components/ProductList.vue'
+export default {
+    components: {
+        ProductList
+    }
+}
+</script>
